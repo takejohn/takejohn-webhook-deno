@@ -1,4 +1,5 @@
 {
+    "license": "MIT",
     "imports": {
         "hono": "jsr:@hono/hono@^4.6.17",
         "misskey-js": "npm:misskey-js@^2025.1.0-beta.0"
