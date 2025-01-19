@@ -1,4 +1,5 @@
 import { api } from 'misskey-js';
+import { setTimeout } from 'node:timers/promises';
 import { env } from '../env.ts';
 import { UserWebhookData } from './types.ts';
 
@@ -28,5 +29,6 @@ async function handleMisskeyNoteWebhook(
     });
     const renoteId = note.id;
     console.log('renoteId', renoteId);
+    await setTimeout(1000);
     await client.request('notes/create', { renoteId });
 }
