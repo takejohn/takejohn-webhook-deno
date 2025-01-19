@@ -24,6 +24,6 @@ export interface UserWebhookData<
     userId: string;
     eventId: string;
     createdAt: number;
-    type: string;
+    type: T;
     body: UserWebhookPayload<T>;
 }

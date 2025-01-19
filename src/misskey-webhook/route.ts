@@ -3,14 +3,15 @@ import { HTTPException } from 'hono/http-exception';
 import { timingSafeEqual } from 'node:crypto';
 import { UserWebhookData } from './types.ts';
 import { handleMisskeyWebhook } from './handle.ts';
+import { env } from '../env.ts';
 
 export const misskeyWebhook = new Hono();
 
 async function isValidSecret(secret: string | undefined): Promise<boolean> {
-    const MISSKEY_HOOK_SECRET = Deno.env.get('MISSKEY_HOOK_SECRET');
-    if (secret == null || MISSKEY_HOOK_SECRET == null) {
+    if (secret == null) {
         return false;
     }
+    const MISSKEY_HOOK_SECRET = env('MISSKEY_HOOK_SECRET');
     const encoder = new TextEncoder();
     const clientSecret = encoder.encode(secret);
     const serverSecret = encoder.encode(MISSKEY_HOOK_SECRET);

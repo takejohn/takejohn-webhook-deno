@@ -9,8 +9,8 @@
         "singleQuote": true
     },
     "tasks": {
-        "dev": "deno serve --env --allow-env --watch src/main.ts",
-        "start": "deno serve --env --allow-env src/main.ts"
+        "dev": "deno serve --env --allow-env --allow-net --watch src/main.ts",
+        "start": "deno serve --env --allow-env --allow-net src/main.ts"
     },
     "compilerOptions": {
         "jsx": "precompile",
