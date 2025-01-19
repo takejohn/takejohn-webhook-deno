@@ -2,7 +2,9 @@
   "version": "4",
   "specifiers": {
     "jsr:@hono/hono@^4.6.17": "4.6.17",
-    "npm:create-hono@*": "0.14.3"
+    "npm:@types/node@*": "22.5.1",
+    "npm:create-hono@*": "0.14.3",
+    "npm:misskey-js@^2025.1.0-beta.0": "2025.1.0-beta.0"
   },
   "jsr": {
     "@hono/hono@4.6.17": {
@@ -10,13 +12,40 @@
     }
   },
   "npm": {
+    "@simplewebauthn/types@11.0.0": {
+      "integrity": "sha512-b2o0wC5u2rWts31dTgBkAtSNKGX0cvL6h8QedNsKmj8O4QoLFQFR3DBVBUlpyVEhYKA+mXGUaXbcOc4JdQ3HzA=="
+    },
+    "@types/node@22.5.1": {
+      "integrity": "sha512-KkHsxej0j9IW1KKOOAA/XBA0z08UFSrRQHErzEfA3Vgq57eXIMYboIlHJuYIfd+lwCQjtKqUu3UnmKbtUc9yRw==",
+      "dependencies": [
+        "undici-types"
+      ]
+    },
     "create-hono@0.14.3": {
       "integrity": "sha512-CuZJAj6dmqAwmTdPM5iFl5vQAD5at6aBKnEaiP5zUYNuiInMtalSXDrMj79lmcdJD/hXNsQf14upMx2se7ZVxA=="
+    },
+    "eventemitter3@5.0.1": {
+      "integrity": "sha512-GWkBvjiSZK87ELrYOSESUYeVIc9mvLLf/nXalMOS5dYrgZq9o5OVkbZAVM06CVxYsCwH9BDZFPlQTlPA1j4ahA=="
+    },
+    "misskey-js@2025.1.0-beta.0": {
+      "integrity": "sha512-XMXW59PWTGs55bsJjf8guLF9TGRBGu0j13CdOvBrfxz4EsOxCE1xmqqYBIHbMIrUHiajdUounOzPrYTOuCK1Zw==",
+      "dependencies": [
+        "@simplewebauthn/types",
+        "eventemitter3",
+        "reconnecting-websocket"
+      ]
+    },
+    "reconnecting-websocket@4.4.0": {
+      "integrity": "sha512-D2E33ceRPga0NvTDhJmphEgJ7FUYF0v4lr1ki0csq06OdlxKfugGzN0dSkxM/NfqCxYELK4KcaTOUOjTV6Dcng=="
+    },
+    "undici-types@6.19.8": {
+      "integrity": "sha512-ve2KP6f/JnbPBFyobGHuerC9g1FYGn/F8n1LWTwNxCEzd6IfqTwUQcNXgEtmmQ6DlRrC1hrSrBnCZPokRrDHjw=="
     }
   },
   "workspace": {
     "dependencies": [
-      "jsr:@hono/hono@^4.6.17"
+      "jsr:@hono/hono@^4.6.17",
+      "npm:misskey-js@^2025.1.0-beta.0"
     ]
   }
 }

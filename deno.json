@@ -1,6 +1,7 @@
 {
     "imports": {
-        "hono": "jsr:@hono/hono@^4.6.17"
+        "hono": "jsr:@hono/hono@^4.6.17",
+        "misskey-js": "npm:misskey-js@^2025.1.0-beta.0"
     },
     "fmt": {
         "indentWidth": 4,
@@ -8,8 +9,8 @@
         "singleQuote": true
     },
     "tasks": {
-        "dev": "deno serve --watch main.ts",
-        "start": "deno serve main.ts"
+        "dev": "deno serve --env --allow-env --watch src/main.ts",
+        "start": "deno serve --env --allow-env src/main.ts"
     },
     "compilerOptions": {
         "jsx": "precompile",
