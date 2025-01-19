@@ -26,7 +26,7 @@ async function handleMisskeyNoteWebhook(
         origin: MISSKEY_REPOST_HOST,
         credential: MISSKEY_REPOST_TOKEN,
     });
-    await client.request('notes/create', {
-        renoteId: data.body.note.id,
-    });
+    const renoteId = note.id;
+    console.log('renoteId', renoteId);
+    await client.request('notes/create', { renoteId });
 }
